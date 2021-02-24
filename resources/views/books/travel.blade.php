@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="card">
-<div class="card-header">Lažybų detalės</div>
+<div class="card-header">Apie knygą</div>
 <div class="card-body">
 <h5>Knygos autoriaus vardas: {{ $book->author->name }}</h5>
 <h5>Knygos autoriaus pavardė:  {{ $book->author->surname }}</h5>
