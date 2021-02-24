@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section( 'content')
-
+@if($errors->any())
+<h4 style="color: red">{{$errors->first()}}</h4>
+@endif
 
  <a  class="btn btn-primary"  href="{{ route('books.create') }}">Create Books</a>
 

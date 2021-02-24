@@ -92,5 +92,14 @@ class AuthorController extends Controller
             $author->delete();
             return redirect()->route('authors.index')
             ->with('success', 'author deleted successfully');
+
+
+
+//             if (count($author->books)){
+// return back()->withErrors(['error' => ['Can\'t delete country with cities assigned, please unassign cities first!']]);
+// }
+// $author->delete();
+// return redirect()->route('authors.index');
+
     }
 }

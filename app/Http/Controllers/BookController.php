@@ -107,5 +107,9 @@ return view('books.travel', ['book' => $book]);
            $book->delete();
             return redirect()->route('books.index')
             ->with('success', 'book deleted successfully');
+
+
+
     }
+
 }
