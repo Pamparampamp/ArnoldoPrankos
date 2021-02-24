@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section( 'content')
-@if($errors->any())
-<h4 style="color: red">{{$errors->first()}}</h4>
-@endif
 
- <a  class="btn btn-primary"  href="{{ route('books.create') }}">Create Books</a>
+
+ <a  class="btn btn-primary"  href="{{ route('books.create') }}">Sukurti knygą</a>
 
 
 <div class="card-body">
@@ -18,7 +16,7 @@ selected="selected"
 @endif>{{ $book->title }}</option>
 @endforeach
 </select>
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Spausti čia</button>
 <a class="btn btn-success" href={{ route('books.index') }}>Rodyti visus</a>
 </form>
 </div>
@@ -29,12 +27,12 @@ selected="selected"
   <thead>
     <tr>
 
-      <th scope="col">Title</th>
-      <th scope="col">Pages</th>
+      <th scope="col">Pavadinimas</th>
+      <th scope="col">Puslapiai</th>
       <th scope="col">Isbn</th>
-      <th scope="col">Short_description</th>
-      <th scope="col">Author_id</th>
-      <th scope="col">Actions</th>
+      <th scope="col">Trumpas aprašymas</th>
+      <th scope="col">Autoriaus id</th>
+      <th scope="col">Veiksmai</th>
     </tr>
   </thead>
   <tbody>
@@ -49,12 +47,11 @@ selected="selected"
 <td>{{ $book->author_id }}</td>
        <td>
         <form action="{{ route('books.destroy', $book->id) }}" method="post">
-{{-- <a href="{{ route('books.travel', $better->id) }}" class="btn btn-success">Peržiūrėti kelionę</a> --}}
- <a  class="btn btn-primary"  href="{{ route('books.edit', $book->id) }}">Edit</a>
+ <a  class="btn btn-primary"  href="{{ route('books.edit', $book->id) }}">Redaguoti</a>
 
             @method('DELETE')
             @csrf
-                <button class="btn btn-danger"  name="destroy">DELETE</button>
+                <button class="btn btn-danger"  name="destroy">Trinti</button>
 
  <a href="{{ route('book.travel', $book->id) }}" class="btn btn-primary m-1">Peržiūrėti </a>
         </form>

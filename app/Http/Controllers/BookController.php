@@ -90,9 +90,9 @@ class BookController extends Controller
 
 
         public function travel($id){
-$book = Book::find($id);
-return view('books.travel', ['book' => $book]);
-}
+        $book = Book::find($id);
+        return view('books.travel', ['book' => $book]);
+    }
 
 
     /**
